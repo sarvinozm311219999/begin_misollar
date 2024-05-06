@@ -1,0 +1,151 @@
+1.Butun son berilgan. Agar, berilgan son musbat bo'lsa, 1 ga oshirilsin, aks holda o'zgartirilmasin. Hosil bo'lgan sonni ekranga chiqaruvchi programma tuzilsin.
+<?php
+$son = 5;
+if ($son > 0) {
+    $son += 1;
+}
+echo $son;
+?>
+
+2.Butun son berilgan. Agar, berilgan son musbat bo'lsa, 1 ga oshiring, aks holda 2 ga kamaytiring. Hosil bo'lgan sonni ekranga chiqaruvchi programma tuzilsin.
+<?php
+$son = -5;
+if ($son > 0) {
+    $son += 1;
+} else {
+    $son -= 2;
+}
+echo "Natija: " . $son;
+?>
+
+3.Butun son berilgan. Agar, berilgan son musbat bo'lsa, 1 ga oshiring, agar manfiy bo'lsa 2 ga kamaytiring. Agar 0 ga teng bo'lsa, 10 ni o'zlashtirsin. Hosil bo'lgan sonni ekranga chiqaruvchi programma tuzilsin.
+<?php
+$son = 5;
+if ($son > 0) {
+    $natija = $son + 1;
+} elseif ($son < 0) {
+
+    $natija = $son - 2;
+} else {
+    $natija = 10;
+}
+echo $natija;
+?>
+
+4.Uchta butun son berilgan. Shu sonlar orasidan nechta musbat son borligini aniqlovchi programma tuzilsin.
+<?php
+$a = 5;
+$b = -2;
+$c = 10;
+$musbat_sonlar_soni = 0;
+if ($a > 0) {
+    $musbat_sonlar_soni++;
+}
+if ($b > 0) {
+    $musbat_sonlar_soni++;
+}
+if ($c > 0) {
+    $musbat_sonlar_soni++;
+}
+echo "Musbat sonlar soni: " . $musbat_sonlar_soni;
+?>
+
+5.Uchta butun son berilgan. Shu sonlar orasidan nechta musbat va manfiy son borligini aniqlovchi programma tuzilsın.
+<?php 
+function musbatManfiy($son1, $son2, $son3) {
+    $musbatlar = 0;
+
+    $manfiylar = 0;
+    $sonlar = array($son1, $son2, $son3);
+    foreach($sonlar as $son) {
+        if ($son > 0) {
+            $musbatlar++;
+        } elseif ($son < 0) {
+            $manfiylar++;
+        }
+    }
+    echo "Musbat sonlar: $musbatlar \n";
+    echo "Manfiy sonlar: $manfiylar \n";
+}
+musbatManfiy(5, -2, 10);
+?>
+
+6.Ikkita butun son berilgan. Shu sonlarning kattasini aniqlovchi programma tuzilsin
+<?php
+function katta_son($a, $b) {
+    if ($a > $b) {
+        return $a;
+    } elseif ($b > $a) {
+        return $b;
+    } else {
+        return "Sonlar teng";
+    }
+}
+$birinchi_son = 5;
+$ikkinchi_son = 10;
+echo "Kattasi: " . katta_son($birinchi_son, $ikkinchi_son);
+?>
+
+
+7.Ikkita butun son berilgan. Shu sonlarning kichigini tartib raqamini aniqlovchi programma tuzilsin.
+<?php
+function kichikSonTartibRaqaminiAniqlovchi($son1, $son2) {
+    if ($son1 < $son2) {
+        return 1;
+    } elseif ($son1 > $son2) {
+        return 2;
+    } else {
+        return "Sonlar teng";
+    }
+}
+$son1 = 10;
+$son2 = 5;
+$natija = kichikSonTartibRaqaminiAniqlovchi($son1, $son2);
+echo "Natija: " . $natija;
+?>
+
+8.Ikkita butun son berilgan. Shu sonlarning avval kattasını keyin kichigini ekranga chiqaruvchi programma tuzilsin.
+<?php
+function kattaKichik($a, $b) {
+    if ($a > $b) {
+        echo $a . " katta son.";
+        echo "<br>";
+        echo $b . " kichik son.";
+    } else {
+        echo $b . " katta son.";
+        echo "<br>";
+        echo $a . " kichik son.";
+    }
+
+}
+kattaKichik(15, 27);
+?>
+
+9.A va B haqiqiy sonlari beringan. Shu sonlarni shunday o'zgartirish kerakkı, A son kichik B son katta bo'lsin. A va B ning qiymati ekranga chiqarilsin.
+<?php
+$A = 7;
+$B = 4;
+echo "Birinchi son: " . $A . "<br>";
+echo "Ikkinchi son: " . $B . "<br>";
+if ($A <= $B) {
+    $temp = $A;
+    $A = $B;
+    $B = $temp;
+}
+echo "Yangi A qiymati: " . $A . "<br>";
+echo "Yangi B qiymati: " . $B;
+?>
+
+10.A va B butun sonlari berilgan Agar o'zgaruvchilar o zaro teng bo'lmasa, A va B o'zgaruvchilari ularning yig'indisini o'zlashtirsin Agar teng bo'lsa, Oni o'zlashtirsin A va B ning qiymati ekranga chiqarilsin
+<?php
+$A = 10;
+$B = 20;
+if ($A != $B) {
+    $result = $A + $B;
+    echo "A + B = " . $result;
+} else {
+    $result = $A * $B;
+
+    echo "A * B = " . $result;
+}
+?>
